@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>"美旅"订车</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/common.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var wweya_li =$("div.tab_menu ul li");
+            wweya_li.click(function(){
+                $(this).addClass("selected")
+                    .siblings().removeClass("selected");
+                var index =  wweya_li.index(this);
+                $("div.tab_box > div")
+                    .eq(index).show(100)
+                    .siblings().hide();
+            }).hover(function(){
+                $(this).addClass("hover");
+            },function(){
+                $(this).removeClass("hover");
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="top_hw clearfix">
+    <div class="top_h clearfix">
+        <div class="top_hl"><span>欢迎来到美旅，美您旅，行之天下！</span> 欢迎加入：<b>Beautiful travels</b></div>
+        <div class="top_hr"><a th:if="${session.userName==null}" th:href="@{/register}">会员注册</a>  |  <span th:if="${session.userName!=null}" th:text="'欢迎你，'+${session.userName}"></span><a th:if="${session.userName==null}" th:href="@{/goLogin}">登录</a>  |  <a th:if="${session.userName!=null}" th:href="@{/goLogout}">退出</a></div>
+    </div>
+</div>
+<div class="head_w">
+    <div class="head_t clearfix">
+        <div class="logo"><img src="images/Logo.png"/></div>
+        <div class="rx_line"><img src="images/Logo2.jpg"/></div>
+    </div>
+</div>
+<div class="mainNav clearfix">
+    <ul class="Nav_ul">
+        <li><a th:href="@{/index}">推荐</a></li>
+        <li><a th:href="@{/travelRoute}">路线route</a></li>
+        <li><a th:href="@{/travelSpot}">景点scenicspot</a></li>
+        <li><a th:href="@{/hotelAccommodation}">酒店hotel</a></li>
+        <li class="cur"><a th:href="@{/car}">车票ticket</a></li>
+        <li ><a th:href="@{/insurance}">保障guarantee</a></li>
+        <li ><a th:href="@{/strategy}">攻略Strategy</a></li>
+        <li><a th:href="@{/attention}">关于我们</a></li>
+        <li th:if="${session.userName!=null}"><a th:href="@{/userCenter}">会员中心</a></li>
+    </ul>
+</div>
+<div class="b_wrap">
+    <div class="current"><span>当前您在：</span><a th:href="@{/index}">首页</a> >> <a th:href="@{/car}">订票</a> <a href="#">车票详情</a> </div>
+    <div class="clumn_w clearfix">
+        <div class="clumn_l">
+            <div class="clumn">
+                <div class="clumn_tit t01">选择车票的类型：</div>
+                <div class="clumn_con">
+
+                    <div class="cln_w">
+                    <p>车票类型如下：</p>
+                    <div class="cln_c clearfix">
+                        <a href="#" target="_blank">坐飞机</a>
+                        <a href="#" target="_blank">乘火车</a>
+                        <a href="#" target="_blank">坐汽车</a>
+
+                    </div>
+                </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="clumn_r">
+            <div class="tc_tit" th:text="${entity.title}"></div>
+            <div class="xq_wrap clearfix">
+                <div class="xq_left"><img th:src="${entity.imgUrl}"/></div>
+                <div class="xq_right">
+                    <div class="xq_detail">
+
+                        <p th:text="'初始地：'+${entity.startPlace}"></p>
+                        <p th:text="'目的地：'+${entity.endPlace}"></p>
+                        <p th:text="'价格：'+${entity.price}"></p>
+                        <p th:text="'发团时间：'+${entity.startDateAndTime}"></p>
+                        <p th:text="'所需时间：'+${entity.needTime}+'时'"></p>
+                        <p th:text="'上车地点：'+${entity.gatherPlace}"></p>
+                        <p th:if="${entity.type==0}" >车票类型：飞机票</p>
+                        <p th:if="${entity.type==1}"  >车票类型：火车票</p>
+                        <p th:if="${entity.type==2}"  >车票类型：汽车票</p>
+                        <p th:text="'备注：'+${entity.remark}"></p>
+                    </div>
+
+                    <div class="xq_button"><a th:if="${session.userName!=null}" th:href="@{/carCreatOrder(id=${entity.id})}">
+                        <img src="images/order_button.jpg"/></a>
+                        <p th:if="${session.userName==null}"><font color="red"> 订车需要先登录哦</font></p>
+                        <p th:if="${CreatSuccess==true}"><font color="red">预定成功，请前往我的订单查看预定</font></p></div>
+                </div>
+            </div>
+            <div class="xq_wrap">
+                <div class="tab_menu xq_menu">
+                    <ul class="xq_ul">
+                        <li class="selected">路线导航</li>
+                    </ul>
+                </div>
+                <div id="allmap" style="height:500px;width:100%;" class="tab_box"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=3&amp;lang=zh"></script>
+<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&amp;ak=mr5DYlRg2yZGvSU8ScQI2RZWt5RYFlcs"></script>
+<script th:inline="javascript">
+    // 百度地图API功能
+    var map = new BMap.Map("allmap");
+    var start = [[${entity.startPlace}]];
+    var end = [[${entity.endPlace}]];
+    //三种驾车策略：最少时间，最短距离，避开高速
+    var routePolicy = [BMAP_DRIVING_POLICY_LEAST_TIME,BMAP_DRIVING_POLICY_LEAST_DISTANCE,BMAP_DRIVING_POLICY_AVOID_HIGHWAYS];
+    map.clearOverlays();
+    var i=$("#driving_way select").val();
+    search(start,end,routePolicy[1]);
+    function search(start,end,route){
+        var driving = new BMap.DrivingRoute(map, {renderOptions:{map: map, autoViewport: true},policy: route});
+        driving.search(start,end);
+    }
+</script>
+</body>
+</html>

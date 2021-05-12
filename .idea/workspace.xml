@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8fc32ebb-9cd5-41c1-aaed-253b6b788315" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="E:\maven\apache-maven-3.6.3\maven-repo" />
+        <option name="mavenHome" value="E:\maven\apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="E:\maven\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1qBSPLVgvfU3xjIgRo4hhapzvPk" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/images" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\travel-master\src\main\resources\static\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\travel-master\src\main\resources\static\images\data" />
+      <recent name="C:\Users\Administrator\Desktop\travel-master\src\main\resources\static\images\hotel" />
+      <recent name="C:\Users\Administrator\Desktop\travel-master\src\main\resources\static\images" />
+      <recent name="C:\Users\Administrator\Desktop\travel-master\src\main\resources\static\css\img" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="TravelApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="travel" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.cn.travel.TravelApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8fc32ebb-9cd5-41c1-aaed-253b6b788315" name="Default Changelist" comment="" />
+      <created>1616551469020</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1616551469020</updated>
+      <workItem from="1616551471588" duration="12584000" />
+      <workItem from="1616636424493" duration="1321000" />
+      <workItem from="1616637776539" duration="1921000" />
+      <workItem from="1616678429535" duration="1234000" />
+      <workItem from="1616724709711" duration="7564000" />
+      <workItem from="1616810158254" duration="1766000" />
+      <workItem from="1616928772916" duration="1755000" />
+      <workItem from="1616976323892" duration="4538000" />
+      <workItem from="1617015933090" duration="1723000" />
+      <workItem from="1617017823329" duration="779000" />
+      <workItem from="1617062498210" duration="1408000" />
+      <workItem from="1617091307684" duration="868000" />
+      <workItem from="1617096259800" duration="4872000" />
+      <workItem from="1617156732409" duration="13534000" />
+      <workItem from="1617196600757" duration="122000" />
+      <workItem from="1617196986452" duration="385000" />
+      <workItem from="1617248676795" duration="33000" />
+      <workItem from="1617323659836" duration="2219000" />
+      <workItem from="1617583122324" duration="5352000" />
+      <workItem from="1618476144534" duration="806000" />
+      <workItem from="1618495671897" duration="615000" />
+      <workItem from="1618533217405" duration="618000" />
+      <workItem from="1618734683040" duration="2701000" />
+      <workItem from="1619138666633" duration="140000" />
+      <workItem from="1619234012438" duration="1667000" />
+      <workItem from="1619252151453" duration="761000" />
+      <workItem from="1619445791061" duration="2483000" />
+      <workItem from="1619524187326" duration="6847000" />
+      <workItem from="1619532477815" duration="641000" />
+      <workItem from="1619695872835" duration="5634000" />
+      <workItem from="1620219840102" duration="309000" />
+      <workItem from="1620561144228" duration="1685000" />
+      <workItem from="1620721251317" duration="1217000" />
+      <workItem from="1620782375739" duration="5000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.io.FileNotFoundException" package="java.io" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

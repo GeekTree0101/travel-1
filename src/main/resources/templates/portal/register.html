@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>"美旅"会员注册</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/common.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var wweya_li =$("div.tab_menu ul li");
+            wweya_li.click(function(){
+                $(this).addClass("selected")
+                    .siblings().removeClass("selected");
+                var index =  wweya_li.index(this);
+                $("div.tab_box > div")
+                    .eq(index).show(100)
+                    .siblings().hide();
+            }).hover(function(){
+                $(this).addClass("hover");
+            },function(){
+                $(this).removeClass("hover");
+            });
+        });
+
+    </script>
+</head>
+<body>
+<div class="top_hw clearfix">
+    <div class="top_h clearfix">
+        <div class="top_hl"><span>欢迎来到美旅，美您旅，行之天下！</span> 欢迎加入：<b>Beautiful travels</b></div>
+        <div class="top_hr"><a th:href="@{/register}">会员注册</a>  |  <a th:href="@{/goLogin}">登录</a>
+        </div>
+    </div>
+    <div class="head_w">
+        <div class="head_t clearfix">
+            <div class="logo"><img src="images/Logo.png"/></div>
+            <div class="rx_line"><img src="images/Logo2.jpg"/></div>
+        </div>
+    </div>
+    <div class="mainNav clearfix">
+        <ul class="Nav_ul">
+            <li><a th:href="@{/index}">推荐</a></li>
+            <li><a th:href="@{/travelRoute}">路线route</a></li>
+            <li><a th:href="@{/travelSpot}">景点scenicspot</a></li>
+            <li><a th:href="@{/hotelAccommodation}">酒店hotel</a></li>
+            <li ><a th:href="@{/car}">车票ticket</a></li>
+            <li><a th:href="@{/insurance}">保障guarantee</a></li>
+            <li ><a th:href="@{/strategy}">攻略Strategy</a></li>
+            <li><a th:href="@{/attention}">关于我们</a></li>
+            <li th:if="${session.userName!=null}"><a th:href="@{/userCenter}">会员中心</a></li>
+        </ul>
+    </div>
+    <div class="b_wrap">
+        <div class="current"><span>当前您在：</span><a th:href="@{/index}">首页</a>  >> <a th:href="@{/register}">用户注册</a></div>
+        <div class="regin_w clearfix">
+            <div class="regin_con">
+                <div class="regin">
+                    <div class="tab_menu regin_menu">
+                        <ul class="regin_ul">
+                            <li class="selected">请注册：</li>
+                        </ul>
+                    </div>
+                    <div class="tab_box">
+                        <div class="regin_tw">
+                            <form class="layui-form" method="post" action="/registering">
+                                <table width="650" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td width="62">用户名：</td>
+                                        <td width="588"><input class="rg_in" type="text" id="userName" name="userName" value="" placeholder="请输入用户名"/>
+                                            <font color="red">*必填字段</font> </td>
+                                    </tr>
+                                    <tr>
+                                        <td>密码：</td>
+                                        <td><input class="rg_in" type="password" id="password" name="password" value="" placeholder="请输入密码"/>
+                                            <font color="red">*必填字段</font> </td>
+                                    </tr>
+                                    <tr>
+                                        <td>确认：</td>
+                                        <td><input class="rg_in" type="password" id="checkPassword" name="checkPassword" value="" placeholder="请输入确认密码"/>
+                                            <font color="red">*必填字段</font> </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="62">电话：</td>
+                                        <td width="588"><input class="rg_in" type="text" id="linkTel" name="linkTel" value="" placeholder="请输入联系方式"/>
+                                            <font color="red">*必填字段</font> </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="62">姓名：</td>
+                                        <td width="588"><input class="rg_in" type="text" id="name" name="name" value="" placeholder="请输入真实姓名"/>
+                                            <font color="red">*必填字段</font> </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="62">身份证：</td>
+                                        <td width="588"><input class="rg_in" type="text" id="icCode" name="icCode" value="" placeholder="请输入身份证号码"/>
+                                            <font color="red">*必填字段</font> </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="62">所在地：</td>
+                                        <td width="588">
+                                            <select id="province" name="province">
+                                                <option value="1">北京</option>
+                                                <option value="2">天津</option>
+                                                <option value="3">上海</option>
+                                                <option value="4">重庆</option>
+                                                <option value="5">河北</option>
+                                                <option value="6">河南</option>
+                                                <option value="7">云南</option>
+                                                <option value="8">辽宁</option>
+                                                <option value="9">黑龙江</option>
+                                                <option value="10">湖南</option>
+                                                <option value="11">安徽</option>
+                                                <option value="12">山东</option>
+                                                <option value="13">新疆</option>
+                                                <option value="14">江苏</option>
+                                                <option value="15">浙江</option>
+                                                <option value="16">江西</option>
+                                                <option value="17">湖北</option>
+                                                <option value="18">广西</option>
+                                                <option value="19">甘肃</option>
+                                                <option value="20">山西</option>
+                                                <option value="21">内蒙古</option>
+                                                <option value="22">陕西</option>
+                                                <option value="23">吉林</option>
+                                                <option value="24">福建</option>
+                                                <option value="25">贵州</option>
+                                                <option value="26">广东</option>
+                                                <option value="27">青海</option>
+                                                <option value="28">西藏</option>
+                                                <option value="29">四川</option>
+                                                <option value="30">宁夏</option>
+                                                <option value="31">海南</option>
+                                                <option value="32">台湾</option>
+                                                <option value="33">香港</option>
+                                                <option value="34">澳门</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td><input type="checkbox" id="checkbox" value="ok"/> 愿意接受美旅用户协议 <font color="red">*必选</font> </td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td><button type="submit" ><img src="images/agree_b.jpg"/></button></td>
+                                    </tr>
+                                    <tr th:if="${message!=null}">
+                                        <td>&nbsp;</td>
+                                        <td th:text="${message}"></td>
+                                    </tr>
+                                </table>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>

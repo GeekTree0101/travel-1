@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>关于"美旅"</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/common.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="top_hw clearfix">
+    <div class="top_h clearfix">
+        <div class="top_hl"><span>欢迎来到美旅，美您旅，行之天下！</span> 欢迎加入：<b>Beautiful travels</b></div>
+        <div class="top_hr"><a th:if="${session.userName==null}" th:href="@{/register}">会员注册</a>  |  <span th:if="${session.userName!=null}" th:text="'欢迎你，'+${session.userName}"></span><a th:if="${session.userName==null}" th:href="@{/goLogin}">登录</a>  |  <a th:if="${session.userName!=null}" th:href="@{/goLogout}">退出</a></div>
+    </div>
+</div>
+<div class="head_w">
+    <div class="head_t clearfix">
+        <div class="logo"><img src="images/Logo.png"/></div>
+        <div class="rx_line"><img src="images/Logo2.jpg"/></div>
+    </div>
+</div>
+<div class="mainNav clearfix">
+    <ul class="Nav_ul">
+        <li><a th:href="@{/index}">推荐</a></li>
+        <li><a th:href="@{/travelRoute}">路线route</a></li>
+        <li><a th:href="@{/travelSpot}">景点scenicspot</a></li>
+        <li   ><a th:href="@{/hotelAccommodation}">酒店hotel</a></li>
+        <li ><a th:href="@{/car}">车票ticket</a></li>
+        <li ><a th:href="@{/insurance}">保障guarantee</a></li>
+         <li ><a th:href="@{/strategy}">攻略Strategy</a></li>
+         <li class="cur"><a th:href="@{/attention}">关于我们</a></li>
+        <li th:if="${session.userName!=null}"><a th:href="@{/userCenter}">会员中心</a></li>
+    </ul>
+</div>
+<div class="b_wrap">
+    <div class="current"><span>当前您在：</span><a th:href="@{/index}">首页</a> >> <a th:href="@{/attention}">关于我们</a> </div>
+    <div class="clumn_w clearfix">
+
+
+        <h1>"美旅"的故事</h1>
+
+        <h2>
+            2021年，美旅旅行网诞生在河南郑州一个中国大学生的宿舍里。<br/><br/><br/>
+
+            那是2021年，当时刚开始在郑州新郑上大学，无意中听说瑞士某四星酒店有一欧元一晚的特价促销，便抱着试试看的心态登陆该酒店网站并成功预订酒店。这一回尝试让资讯的力量打动了他，他以自己搜集的信息为基础做了一个简单的网站和大家一起分享这些资讯。于是，美旅网站便诞生了。<br/><br/>
+
+            从诞生那天起，美旅就是属于全体美旅er的。<br/><br/>
+
+            刚开始，这个小小的网站只有他一个技术开发人员，毕竟网站初期建立，功能相对不是特别完善，但它却吸引了众多热心的大学生在这个平台上分享自己的旅行。分享和互助，从那时起就成为了美旅的基因。通过口口相传，大家帮助大家，很快美旅就在网站里。未来的某一天，美旅用户已经逐渐多了起来，那时，将会有近亿中国旅行者在美旅的陪伴下踏上旅途。<br/><br/>
+
+            未来，有数不清的美旅er为了她的成长做出了巨大的贡献，比如我们早期的开发人员和热心网友，其中有些人还变成了现在的美旅员工；也有很多人在美旅这个平台上让自己为大家所知，比如大勇和小花，小欣，谢谢和菜菜，千里和左手，花甲背包客，叶梓颐，小墨阿猴等等等等；当然，还有那些我们永远不会忘记的名字：小刀MM，休伯利安_杨、玲子，晶晶……<br/><br/>
+
+            15年后的今天，美旅有了很多很多改变：获得了投资，有了新办公室，建立起了团队，有了更多的产品，更好看的界面以及更多的用户；2050，美旅更是全面升级旅行兴趣社交产品“Biu！”，以美图、声音、短视频等方式帮助用户记录、分享旅行瞬间。<br/><br/>
+
+            而更令我们欣喜的是，它依然能够幸运地坚守着那些不变：这里依然是所有美旅er的家，我们的目标依然是希望通过这个平台让中国人的出境旅行更简单，让更多的美旅er获得更美好的旅行体验，我们，依然是你们，也因此，我们将域名改为了https://github.com/ShawnZhao19 <br/><br/>
+
+            因为，美旅er，就是美旅的一切。<br/><br/>
+
+            旅行，也是美旅的一切。<br/><br/>
+
+            我们和大家一样热爱旅行，我们相信：<br/><br/>
+
+            无论你因为什么出发，旅行，都会让你的生命更加丰富多彩。<br/><br/>
+
+            下一个15年，美旅愿意陪你继续体验整个世界的精彩。<br/><br/>
+
+            让我们，继续，对世界上瘾！
+        </h2>
+    </div>
+</div>
+</body>
+</html>
