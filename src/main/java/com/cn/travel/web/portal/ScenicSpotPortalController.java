@@ -27,6 +27,43 @@ public class ScenicSpotPortalController extends BaseController {
     @Autowired
     IOrderService orderService;
 
+    @RequestMapping("/travelStop/search")
+    public ModelAndView search(PageParam pageParam, @RequestParam(value = "query", required = false) String query) throws Exception {
+        ModelAndView mv = this.getModeAndView();
+
+        if (Tools.notEmpty(query)) {
+            mv.addObject("query", query);
+        } else {
+            // TODO: return empty (not founded :[)
+            return mv;
+        }
+        
+        // boilerplate /travelStop page
+        if(pageParam.getPageNumber()<1){
+            pageParam =new PageParam();
+            long count = 0;
+            try {
+                count = scenicSpotService.count2();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            pageParam.setCount(count);
+            if(count<=7){
+                pageParam.setSize(1);
+            }else{
+                pageParam.setSize(count%7==0?count/7:count/7+1);
+            }
+            pageParam.setPageNumber(1);
+            pageParam.setPageSize(7);
+        }
+
+        mv.addObject("pageData", scenicSpotService.findByPage(pageParam.getPageNumber(),pageParam.getPageSize(), query));
+        mv.addObject("pageParam",pageParam);
+        mv.setViewName("portal/travelSpot");
+        return mv;
+    }
+
+
     @RequestMapping("/travelSpot")
     public ModelAndView travelSpot(PageParam pageParam) throws Exception {
         ModelAndView mv = this.getModeAndView();

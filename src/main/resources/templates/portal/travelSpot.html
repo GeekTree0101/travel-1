@@ -126,6 +126,14 @@ window.onload=function(){
             <div class="js_box">
                 <div class="js_tit clearfix">
                     <div class="xs_w">景点排序：<a class="tw_a" href="#">热度</a></div>
+                    <form class="layui-form" id="pageForm" name="pageForm" action="/travelSpot/search" method="post">
+                        <div class="layui-inline">
+                            <div class="layui-input-inline">
+                                <input type="text" name="query" th:value="${query}" placeholder="example: beigjin" class="layui-input search_input"/>
+                            </div>
+                            <button class="layui-btn search_btn" type="submit">搜索</button>
+                        </div>
+                    </form>
                     <form id="pageForm" name="pageForm" action="/travelSpot" method="post">
                         <input type="hidden" id="count" name="count" th:value="${pageParam.count}"/>
                         <input type="hidden" id="pageNumber" name="pageNumber" th:value="${pageParam.pageNumber}"/>
