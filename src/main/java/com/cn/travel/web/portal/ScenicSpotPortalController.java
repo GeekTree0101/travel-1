@@ -61,6 +61,7 @@ public class ScenicSpotPortalController extends BaseController {
 
         mv.addObject("pageData", pageData);
         mv.addObject("pageParam",pageParam);
+        mv.setViewName("portal/travelSpot");
         mv.setViewName("portal/travelSpotView");
         return mv;
     }
