@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 import java.util.Date;
+import java.util.List;
 
 @Controller
 public class ScenicSpotPortalController extends BaseController {
@@ -32,10 +33,12 @@ public class ScenicSpotPortalController extends BaseController {
         ModelAndView mv = this.getModeAndView();
 
         if (Tools.notEmpty(query)) {
+
+            // HERE < 用break point来确认吧
             mv.addObject("query", query);
         } else {
-            // TODO: return empty (not founded :[)
-            return mv;
+            // 搜索后必须存在 query 值
+            return REDIRECT+ "/404";
         }
         
         // boilerplate /travelStop page
@@ -57,7 +60,15 @@ public class ScenicSpotPortalController extends BaseController {
             pageParam.setPageSize(7);
         }
 
-        mv.addObject("pageData", scenicSpotService.findByPage(pageParam.getPageNumber(),pageParam.getPageSize(), query));
+        List<ScenicSpot> pageData = scenicSpotService.findByPage(pageParam.getPageNumber(),pageParam.getPageSize(), query);
+
+        // HERE < 用break point来确认吧
+        if (pageData.isEmpty()) {
+            // 必须有搜索结果才能从屏幕上显示 。
+            return REDIRECT+ "/404";
+        }
+
+        mv.addObject("pageData", pageData);
         mv.addObject("pageParam",pageParam);
         mv.setViewName("portal/travelSpot");
         return mv;
