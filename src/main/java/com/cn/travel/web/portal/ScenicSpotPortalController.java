@@ -28,7 +28,7 @@ public class ScenicSpotPortalController extends BaseController {
     @Autowired
     IOrderService orderService;
 
-    @RequestMapping("/travelSpot/search")
+    @RequestMapping("/searchTravelSpot")
     public ModelAndView search(PageParam pageParam, @RequestParam(value = "query", required = false) String query) throws Exception {
         ModelAndView mv = this.getModeAndView();
 
