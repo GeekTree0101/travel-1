@@ -36,7 +36,7 @@ public class ScenicSpotPortalController extends BaseController {
 
             // HERE < 用break point来确认吧
             mv.addObject("query", query);
-        } 
+        }
 
         // boilerplate /travelStop page
         if(pageParam.getPageNumber()<1){
@@ -61,7 +61,7 @@ public class ScenicSpotPortalController extends BaseController {
 
         mv.addObject("pageData", pageData);
         mv.addObject("pageParam",pageParam);
-        mv.setViewName("portal/travelSpot");
+        mv.setViewName("portal/travelSpotView");
         return mv;
     }
 
