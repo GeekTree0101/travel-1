@@ -36,11 +36,8 @@ public class ScenicSpotPortalController extends BaseController {
 
             // HERE < 用break point来确认吧
             mv.addObject("query", query);
-        } else {
-            // 搜索后必须存在 query 值
-            return REDIRECT+ "/404";
-        }
-        
+        } 
+
         // boilerplate /travelStop page
         if(pageParam.getPageNumber()<1){
             pageParam =new PageParam();
@@ -61,12 +58,6 @@ public class ScenicSpotPortalController extends BaseController {
         }
 
         List<ScenicSpot> pageData = scenicSpotService.findByPage(pageParam.getPageNumber(),pageParam.getPageSize(), query);
-
-        // HERE < 用break point来确认吧
-        if (pageData.isEmpty()) {
-            // 必须有搜索结果才能从屏幕上显示 。
-            return REDIRECT+ "/404";
-        }
 
         mv.addObject("pageData", pageData);
         mv.addObject("pageParam",pageParam);
